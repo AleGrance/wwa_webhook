@@ -17,12 +17,23 @@ module.exports = (sequelize, DataType) => {
   });
 
   Chats.associate = (models) => {
+    // Aso con Contact
+    Chats.belongsTo(models.Contacts, {
+      foreignKey: {
+        name: "contact_id",
+        allowNull: false,
+      },
+    });
+
+    // Aso con Messages
     Chats.hasMany(models.Messages, {
       foreignKey: {
         name: "chat_id",
         allowNull: false,
       },
     });
+
+    
   };
 
   return Chats;
