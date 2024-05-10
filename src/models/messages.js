@@ -18,7 +18,7 @@ module.exports = (sequelize, DataType) => {
       allowNull: false,
     },
     msg_time: {
-      type: DataType.INTEGER,
+      type: DataType.BIGINT,
       allowNull: false,
     },
     msg_act: {
